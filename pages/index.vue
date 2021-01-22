@@ -70,7 +70,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire">
+          <v-btn color="primary" nuxt to="/user">
             Continue
           </v-btn>
         </v-card-actions>
@@ -87,6 +87,7 @@ export default {
   components: {
     Logo,
     VuetifyLogo
-  }
+  },
+  middleware: 'authenticated'
 }
 </script>

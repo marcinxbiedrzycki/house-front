@@ -64,12 +64,19 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'user',
+          title: 'Users',
           to: '/user'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Houses',
+          to: '/house'
         }
       ],
-      miniVariant: true,
-      title: 'Panel administracyjny'
+      miniVariant: false,
+      right: true,
+      rightDrawer: false,
+      title: 'House share'
     }
   }
 }

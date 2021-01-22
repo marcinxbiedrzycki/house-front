@@ -2,21 +2,15 @@
   <div>
     <h1>User list!</h1>
     <ul>
-      <li v-for="user in users" :key="user['id']" @click="clicked(user)"> {{ user['username'] }} {{ user['id'] }}</li>
+      <li v-for="user in users" :key="user['id']"> {{ user['username'] }} </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  layout: 'admin',
+  layout: 'default',
   middleware: 'notAuthenticated',
-  methods: {
-    clicked (user) {
-      this.$router.push('/user/' + user.id)
-      // console.log('clickList fired with ' + user.id)
-    }
-  },
   async asyncData ({ $axios, params }) {
     const id = params.id
     return await $axios.$get('http://localhost:8000/api/users')
