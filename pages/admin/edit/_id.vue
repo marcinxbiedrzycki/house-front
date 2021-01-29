@@ -1,9 +1,7 @@
 <template>
   <div>
-    <h1>Hello {{ id }}</h1>
+    <h1>Edot {{ user['name'] }}</h1>
     <h1>Hello </h1>
-    <h2> {{ user['name'] }}</h2>
-    <h2> {{ user['name'] }}</h2>
     <h2> {{ user['name'] }}</h2>
   </div>
 </template>

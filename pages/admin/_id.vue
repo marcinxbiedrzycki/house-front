@@ -2,7 +2,7 @@
   <div>
     <h1>Hello {{ id }}</h1>
     <ul>
-      <li v-for="rate in rates" :key="rate.currency">{{ rate.currency }}</li>
+      <li v-for="rate in rates" \:key="rate.currency">{{ rate.currency }}</li>
     </ul>
   </div>
 </template>
