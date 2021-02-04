@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  layout: 'house',
+  layout: 'default',
   async asyncData ({ $axios, params }) {
     const id = params.id
     return await $axios.$get('http://localhost:8000/api/houses')

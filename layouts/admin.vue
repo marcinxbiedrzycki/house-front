@@ -59,13 +59,18 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Home',
           to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'user',
-          to: '/user'
+          title: 'users',
+          to: '/users'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'houses',
+          to: '/house'
         }
       ],
       miniVariant: true,

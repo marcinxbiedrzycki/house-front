@@ -13,7 +13,7 @@
           :key="i"
           :to="item.to"
           router
-          exact
+          exactW
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -74,18 +74,23 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Home',
           to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Users',
-          to: '/user'
+          title: 'Profil',
+          to: '/profil'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Houses',
           to: '/house'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Dodaj ogłoszenie',
+          to: '/house/add'
         }
       ],
       miniVariant: false,

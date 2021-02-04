@@ -48,6 +48,25 @@
             Thank you for developing with Vuetify and I look forward to bringing
             more exciting features in the future.
           </p>
+
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="static/vuetify-logo.svg" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="/house" class="btn btn-primary">Zobacz liste domków</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="/house/add" class="btn btn-primary">Dodaj swoje ogłoszenie</a>
+            </div>
+          </div>
+
           <div class="text-xs-right">
             <em><small>&mdash; John Leider</small></em>
           </div>
@@ -88,6 +107,7 @@ export default {
     Logo,
     VuetifyLogo
   },
-  middleware: 'authenticated'
+  layout: 'default',
+  // middleware: 'authenticated'
 }
 </script>

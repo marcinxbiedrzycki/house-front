@@ -20,7 +20,8 @@
     "js-cookie": "^2.2.1",
     "mdbvue": "^6.7.2",
     "nuxt": "^2.14.12",
-    "nuxt-material-design-icons": "^1.0.4"
+    "nuxt-material-design-icons": "^1.0.4",
+    "vue-table-dynamic": "^0.4.4"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",

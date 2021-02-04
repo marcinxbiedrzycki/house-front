@@ -65,7 +65,7 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'Users',
-          to: '/user'
+          to: '/users'
         },
         {
           icon: 'mdi-chart-bubble',

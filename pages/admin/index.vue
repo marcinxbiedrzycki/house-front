@@ -13,8 +13,8 @@ export default {
   middleware: 'notAuthenticated',
   methods: {
     clicked (user) {
-      this.$router.push('/user/' + user.id)
-      // console.log('clickList fired with ' + user.id)
+      this.$router.push('/admin/users/edit' + user.id)
+      // console.log('clickList fired with ' + users.id)
     }
   },
   async asyncData ({ $axios, params }) {

@@ -1,20 +1,22 @@
 <template>
-  <!-- Default form login -->
-  <form>
-    <p class="h4 text-center mb-4">Sign in</p>
-    <label for="name" class="grey-text">Your email</label>
-    <input type="text" id="name" class="form-control"/>
-    <br/>
-    <label for="defaultFormLoginPasswordEx" class="grey-text">Your password</label>
-    <input type="password" id="defaultFormLoginPasswordEx" class="form-control"/>
-    <div class="text-center mt-4">
-      <button class="btn btn-indigo" type="submit">Login</button>
-      <button class="btn btn-primary" @click="postLogin">
+  <div class="container" style="background-color: red">
+    <h1>Sign in to access the secret page</h1>
+    <!--    <h2> {{ id }}</h2>-->
+    <div>
+      <label for="name">
+        <input v-model="name" id="name" />
+        <!--        <v-input id="name" v-model="name" />-->
+        <!--        <input id="password" type="password" value="test">-->
+      </label>
+      <label for="password">
+        <input v-model="password" id="password" />
+      </label>
+      <button @click="postLogin">
         login
       </button>
+      <p>The credentials are not verified for the example purpose.</p>
     </div>
-  </form>
-  <!-- Default form login -->
+  </div>
 </template>
 
 <script>
@@ -37,9 +39,3 @@ export default {
   }
 }
 </script>
-
-
-// eslint-disable-next-line require-await
-// async asyncData () {
-//   return { id: 'asdasd' }
-// },

@@ -1,9 +1,9 @@
 <template>
-  <img class="VuetifyLogo" alt="Vuetify Logo" src="/house.jpg">
+  <img class="HouseTile" alt="House Tile" src="/house.jpg">
 </template>
 
 <style>
-.VuetifyLogo {
+.HouseTile {
   height: 180px;
   width: 180px;
   transform: rotateY(560deg);
