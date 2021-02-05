@@ -1,22 +1,23 @@
 <template>
-  <div class="container" style="background-color: red">
-    <h1>Sign in to access the secret page</h1>
-    <!--    <h2> {{ id }}</h2>-->
-    <div>
-      <label for="name">
-        <input v-model="name" id="name" />
-        <!--        <v-input id="name" v-model="name" />-->
-        <!--        <input id="password" type="password" value="test">-->
-      </label>
-      <label for="password">
-        <input v-model="password" id="password" />
-      </label>
-      <button @click="postLogin">
-        login
-      </button>
-      <p>The credentials are not verified for the example purpose.</p>
-    </div>
-  </div>
+  <v-container>
+    <v-row>
+      <v-col>
+        <h1>Zaloguj się</h1>
+        <div v-for="error in errors">
+          <v-alert :key="error" color="red" elevation="8" prominent type="error">
+            {{ error }}
+          </v-alert>
+        </div>
+        <v-form lazy-validation @submit="postLogin">
+          <v-text-field v-model="username" label="Nazwa użytkownika" />
+          <v-text-field v-model="password" label="Hasło" type="password" />
+          <v-btn type="submit" @click="postLogin">
+            Zaloguj
+          </v-btn>
+        </v-form>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -24,17 +25,25 @@ const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   middleware: 'notAuthenticated',
+  data () {
+    return {
+      username: '',
+      password: '',
+      errors: []
+    }
+  },
   methods: {
-    async postLogin ({ $axios }) {
-      // eslint-disable-next-line no-undef
-      const token = await this.$axios.$post('http://localhost:8000/authentication_token',
-        {
-          name: this.name,
-          password: this.password
-        }).then(res => res.token)
-      this.$store.commit('setAuth', token) // mutating to store for client rendering
-      Cookie.set('auth', token) // saving token in cookie for server rendering
-      this.$router.push('/')
+    async postLogin (e) {
+      e.preventDefault()
+      this.errors = []
+      await this.$axios.$post('http://localhost:8000/authentication_token', {
+        name: this.username,
+        password: this.password
+      }).then(({ token }) => {
+        this.$store.commit('setAuth', token)
+        Cookie.set('auth', token)
+        this.$router.push('/')
+      }).catch(error => this.errors.push(error.response.data.message))
     }
   }
 }

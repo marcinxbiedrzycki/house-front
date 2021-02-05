@@ -5,11 +5,13 @@ export const state = () => {
     auth: null
   }
 }
+
 export const mutations = {
   setAuth (state, auth) {
     state.auth = auth
   }
 }
+
 export const actions = {
   nuxtServerInit ({ commit }, { req }) {
     let auth = null
@@ -24,3 +26,18 @@ export const actions = {
     commit('setAuth', auth)
   }
 }
+
+// const emptyJwtUser = { name: null, roles: [] }
+//
+// export const state = () => {
+//   return {
+//     auth: null,
+//     user: emptyJwtUser
+//   }
+// }
+// export const mutations = {
+//   setAuth (state, auth) {
+//     state.auth = auth
+//     state.user = auth !== null ? require('jwt-decode')(auth) : emptyJwtUser
+//   }
+// }

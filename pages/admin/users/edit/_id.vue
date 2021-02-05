@@ -1,22 +1,30 @@
 <template>
-  <div>
-    <!--    <h1>Edot {{ users['name'] }}</h1>-->
-    <h1>Hello </h1>
-    <!--    <h2> {{ users['id'] }}</h2>-->
-  </div>
+  <v-form lazy-validation @submit="editUser">
+    <h1>Edytujesz dane użytkownika: {{ user['name'] }}</h1>
+    <v-text-field v-model="username" :placeholder="user['name']" :label="user['name'] " />
+<!--    <v-text-field v-model="email" :placeholder="user['mail']" :label="user['mail'] " />-->
+    <v-text-field v-model="email" label="Email" type="mail"/>
+    <v-btn type="submit">
+      Zmień
+    </v-btn>
+  </v-form>
 </template>
 
 <script>
 export default {
   layout: 'admin',
   async asyncData ({ $axios, params }) {
-    // const id = params.id
-    // const z = await $axios.$get('http://localhost:8000/api/users/index', {
-    //   index: params.id
-    // })
-    //   .then(r => (console.log(r, params)))
     return await $axios.$get(`http://localhost:8000/api/users/${params.id}`)
-      .then(r => ({ user: r}))
+      .then(r => ({ user: r }))
+  },
+  methods: {
+    async editUser ({ $axios, params }) {
+      return await $axios.$post(`http://localhost:8000/api/users/${params.id}`,
+        {
+          name: this.name,
+          password: this.password
+        }).then(this.$router.push('/admin/users/'))
+    }
   }
 }
 </script>

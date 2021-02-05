@@ -18,10 +18,13 @@
     "cookieparser": "^0.1.0",
     "core-js": "^3.8.2",
     "js-cookie": "^2.2.1",
+    "jwt-decode": "^3.1.2",
     "mdbvue": "^6.7.2",
     "nuxt": "^2.14.12",
     "nuxt-material-design-icons": "^1.0.4",
-    "vue-table-dynamic": "^0.4.4"
+    "vue-material": "^1.0.0-beta-15",
+    "vue-table-dynamic": "^0.4.4",
+    "vue-upload-image": "^1.1.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
