@@ -10,7 +10,7 @@
 <script>
 export default {
   layout: 'admin',
-  middleware: 'notAuthenticated',
+  middleware: 'authenticated',
   methods: {
     clicked (user) {
       this.$router.push('/admin/users/edit/' + user.id)

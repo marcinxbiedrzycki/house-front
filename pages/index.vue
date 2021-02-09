@@ -1,66 +1,185 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="12" md="12">
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center full-content">
+        <h2 class="section-title no-border v-3"><span>Witaj</span> w house share</h2>
+        <p class="sub-section-title v-2">Przeglądaj liste domków do wynajęcia lub dodaj swoją ofertę</p>
+        <div class="mrb-45"></div>
+        <!--  /.mrb -->
       </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <div class="card" style="width: 20rem;">
-            <div class="card-block">
-              <h4 class="card-title">Domki</h4>
-              <p class="card-text">Zobacz listę domków</p>
-<!--              <a href="/house" class="btn btn-primary">Zobacz liste domków</a>-->
-              <v-btn color="primary" nuxt to="/house">
-                Zobacz liste domków
-              </v-btn>
-            </div>
+      <!--  /.col-md-12 -->
+    </div>
+    <!--  /.row -->
+
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-6 col-xl-4">
+            <article class="post">
+              <div class="article-v2">
+                <figure class="article-thumb">
+                  <a href="#">
+<!--                    <img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt="blog image"/>-->
+                    <img src="../static/housik.jpg" width="350" height="280" alt="blog image"/>
+                  </a>
+                </figure>
+                <br>
+                <br>
+                <div class="article-content-main">
+                  <div class="article-header">
+                    <h2 class="entry-title"><a href="houses/add">Dodaj nowe ogłoszenie.</a></h2>
+                    <div class="entry-meta">
+                    </div>
+                    <!-- /.entry-meta -->
+                  </div>
+                  <div class="article-footer">
+                    <div class="row">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
 
-          <div class="card" style="width: 20rem;">
-            <div class="card-block">
-              <h4 class="card-title">Dodaj ofertę</h4>
-              <p class="card-text">Dodaj nowy domek do oferty.</p>
-<!--              <a href="/house/add" class="btn btn-primary">Dodaj swoje ogłoszenie</a>-->
-              <v-btn color="primary" nuxt to="/user/add">
-                Dodaj swoje ogłoszenie
-              </v-btn>
-            </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="post">
+              <div class="article-v2">
+                <figure class="article-thumb">
+                  <a href="#">
+<!--                    <img src="https://via.placeholder.com/350x280/87CEFA/000000" alt="blog image"/>-->
+                    <img src="../static/houz.png" width="350" height="280" alt="blog image"/>
+                  </a>
+                </figure>
+                <!-- /.article-thumb -->
+                <div class="article-content-main">
+                  <div class="article-header">
+                    <h2 class="entry-title"><a href="/houses">Zobacz liste domków.</a></h2>
+                    <div class="entry-meta">
+                    </div>
+                  </div>
+                  <div class="article-footer">
+                    <div class="row">
+                      <div class="col-6 text-left footer-link">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
 
-          <div class="card" style="width: 20rem;">
-            <div class="card-block">
-              <h4 class="card-title">Profil</h4>
-              <p class="card-text">Zobacz swój profil.</p>
-              <!--              <a href="/house/add" class="btn btn-primary">Dodaj swoje ogłoszenie</a>-->
-              <v-btn color="primary" nuxt to="/users/">
-                Przejdź do swojego profilu.
-              </v-btn>
-            </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="post">
+              <div class="article-v2">
+                <figure class="article-thumb">
+                  <a href="#">
+                    <img src="../static/profile-1506810-1278719.png" width="350" height="280" alt="blog image"/>
+                  </a>
+                </figure>
+                <br>
+                <br>
+                <div class="article-content-main">
+                  <div class="article-header">
+                    <h2 class="entry-title"><a href="#">Zobacz swój profil</a></h2>
+                    <div class="entry-meta">
+                    </div>
+                  </div>
+                  <div class="article-footer">
+                    <div class="row">
+                      <!--  /.col-6 -->
+                      <!--  /.col-6 -->
+                    </div>
+                    <!--  /.row -->
+                  </div>
+                  <!--  /.article-footer -->
+                </div>
+                <!--  /.article-content-main -->
+              </div>
+              <!--  /.article-v2 -->
+            </article>
+            <!--  /.post -->
           </div>
-
-          <hr class="my-3">
-          <br>
-        </v-card-text>
-      </v-card>
-    </v-col>
-  </v-row>
+          <!--  /.col-md-6 -->
+        </div>
+        <!--  /.blog-carousel -->
+      </div>
+      <!--  /.col-12 -->
+    </div>
+<!--    &lt;!&ndash;  /.row &ndash;&gt;authenticated-->
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
   layout: 'default',
-  // middleware: 'authenticated'
+  middleware: 'notAuthenticated'
 }
 </script>
+
+<style>
+body{margin-top:20px;}
+.post .article-v2 {
+  padding: 0 15px;
+}
+
+.post .article-v2 .entry-title {
+  font-size: 16px;
+  color: #666;
+  font-weight: 600;
+}
+
+.post .article-v2 .article-header {
+  margin-bottom: 15px;
+}
+
+.post .article-v2 .article-content-main {
+  -webkit-box-shadow: 1px 0 20px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 0 20px 1px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  position: relative;
+  background: #fff;
+  margin-top: -75px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .post .article-v2 .article-content-main {
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+.post .article-v2 .article-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+.post .article-v2 .article-thumb {
+  position: relative;
+  left: 25px;
+  margin-bottom: 0;
+}
+
+.post .article-v2 .article-footer {
+  border-top: 1px solid #ebebeb;
+  padding-top: 15px;
+  margin-top: 20px;
+}
+
+.post .article-v2 .article-footer .more-link {
+  color: #ffa800;
+}
+
+.post .article-v2 .article-footer .footer-meta a {
+  color: #aaa;
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.post .article-v2 .article-footer .footer-meta a i {
+  font-size: 16px;
+  margin-left: 2px;
+}
+
+</style>

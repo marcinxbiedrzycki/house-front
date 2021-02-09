@@ -11,7 +11,7 @@
         <v-form lazy-validation @submit="postLogin">
           <v-text-field v-model="username" label="Nazwa użytkownika" />
           <v-text-field v-model="password" label="Hasło" type="password" />
-          <v-btn type="submit" @click="postLogin">
+          <v-btn type="submit">
             Zaloguj
           </v-btn>
         </v-form>

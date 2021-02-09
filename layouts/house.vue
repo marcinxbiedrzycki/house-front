@@ -70,7 +70,7 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'Houses',
-          to: '/house'
+          to: '/houses'
         }
       ],
       miniVariant: false,

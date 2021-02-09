@@ -9,6 +9,7 @@
 <script>
 export default {
   layout: 'admin',
+  middleware: 'authenticated',
   async asyncData ({ $axios, params }) {
     // const z = await $axios.$get(`http://localhost:8000/api/houses/{{params.id}}`, {
     //   index: params.id

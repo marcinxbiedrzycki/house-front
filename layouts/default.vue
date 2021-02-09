@@ -85,12 +85,12 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'Houses',
-          to: '/house'
+          to: '/houses'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Dodaj ogłoszenie',
-          to: '/house/add'
+          to: '/houses/add'
         }
       ],
       miniVariant: false,

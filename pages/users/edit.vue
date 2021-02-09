@@ -2,7 +2,6 @@
   <div>
     <h1>Hello {{ id }}</h1>
     <h1>Hello </h1>
-    <h2> {{ user['name'] }}</h2>
 
     <div class="container" style="padding-top: 60px;">
       <h1 class="page-header">Edit Profile</h1>
@@ -95,53 +94,24 @@
         </div>
       </div>
     </div>
-
-
-<!--    <v-card>-->
-<!--      <v-card-title class="headline">-->
-<!--        <h1>Dodaj nową oferte</h1>-->
-<!--        <label for="name">-->
-<!--          <br>-->
-<!--          <input v-model="name" placeholder="edit me" id="name">-->
-<!--        </label>-->
-<!--        <label for="password">-->
-<!--          <input v-model="password" id="password" />-->
-<!--        </label>-->
-<!--        <br>-->
-<!--      </v-card-title>-->
-<!--      <button class="btn-primary" @click="postAdd">-->
-<!--        Dodaj-->
-<!--      </button>-->
-<!--      <button class="btn-danger" @click="back">-->
-<!--        Anuluj-->
-<!--      </button>-->
-<!--    </v-card>-->
-
-
-<!--    <h2> {{ users['name'] }}</h2>-->
-<!--    <h2> {{ users['name'] }}</h2>-->
   </div>
 </template>
 
 <script>
 export default {
   layout: 'default',
+  // middleware: 'authenticated',
   async asyncData ({ $axios, params, $router }) {
-    // return await $axios.$get(`http://localhost:8000/api/users/${params.id}`)
-    //   .then(r => (console.log(r)))
-    // .catch(r => console.log(r))
-    // .catch( () => $router.push('/login') )
     return await $axios.$get(`http://localhost:8000/api/users/${params.id}`)
       .then(r => ({ user: r }))
   }
 }
 </script>
 
-
-async updateData ({ $axios, params }) {
-return await $axios.post(`http://localhost:8000/api/users/${params.id}`,
-{
-name: this.name,
-password: this.password
-}).then(r => ({ user: r }), this.$router.push('/login'))
-}
+<!--async updateData ({ $axios, params }) {-->
+<!--return await $axios.post(`http://localhost:8000/api/users/${params.id}`,-->
+<!--{-->
+<!--name: this.name,-->
+<!--password: this.password-->
+<!--}).then(r => ({ user: r }), this.$router.push('/login'))-->
+<!--}-->

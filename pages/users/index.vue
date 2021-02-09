@@ -10,7 +10,7 @@
 <script>
 export default {
   layout: 'default',
-  middleware: 'notAuthenticated',
+  // middleware: 'authenticated',
   async asyncData ({ $axios, params }) {
     const id = params.id
     return await $axios.$get('http://localhost:8000/api/users')
