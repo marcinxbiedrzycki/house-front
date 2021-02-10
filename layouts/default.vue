@@ -91,6 +91,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Dodaj ogłoszenie',
           to: '/houses/add'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Regulamin',
+          to: '/regulamin'
         }
       ],
       miniVariant: false,

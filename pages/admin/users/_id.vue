@@ -32,7 +32,7 @@
                     </strong>
                   </td>
                   <td class="text-primary">
-                    123456789
+                    {{ user.id }}
                   </td>
                 </tr>
                 <tr>
@@ -43,18 +43,18 @@
                     </strong>
                   </td>
                   <td class="text-primary">
-                    Bootdey
+                    {{ user.name }}
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <strong>
                       <span class="glyphicon glyphicon-cloud text-primary" />
-                      Lastname
+                      Telefon kontaktowy
                     </strong>
                   </td>
                   <td class="text-primary">
-                    {{ user['name'] }}
+                    {{ user['contactNumber'] }}
                   </td>
                 </tr>
 
@@ -66,7 +66,7 @@
                     </strong>
                   </td>
                   <td class="text-primary">
-                    {{ user['name'] }}
+                    {{ user.name }}
                   </td>
                 </tr>
                 <tr>
@@ -77,40 +77,18 @@
                     </strong>
                   </td>
                   <td class="text-primary">
-                    Admin
+                    {{ user['roles'] }}
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <strong>
                       <span class="glyphicon glyphicon-envelope text-primary" />
-                      {{ user['email'] }} Email
+                      Email
                     </strong>
                   </td>
                   <td class="text-primary">
-                    noreply@email.com
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>
-                      <span class="glyphicon glyphicon-calendar text-primary" />
-                      created
-                    </strong>
-                  </td>
-                  <td class="text-primary">
-                    20 jul 20014
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>
-                      <span class="glyphicon glyphicon-calendar text-primary" />
-                      Modified
-                    </strong>
-                  </td>
-                  <td class="text-primary">
-                    20 jul 20014 20:00:00
+                    {{ user['email'] }}
                   </td>
                 </tr>
                 <tr>

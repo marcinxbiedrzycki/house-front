@@ -32,7 +32,7 @@
                     </strong>
                   </td>
                   <td class="text-primary">
-                    123456789
+                    {{ user.id }}
                   </td>
                 </tr>
                 <tr>
@@ -43,18 +43,18 @@
                     </strong>
                   </td>
                   <td class="text-primary">
-                    Bootdey
+                    {{ user.name }}
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <strong>
                       <span class="glyphicon glyphicon-cloud text-primary" />
-                      Lastname
+                      Telefon kontaktowy
                     </strong>
                   </td>
                   <td class="text-primary">
-                    {{ user['name'] }}
+                    {{ tmp['contactNumber'] }}
                   </td>
                 </tr>
 
@@ -66,7 +66,7 @@
                     </strong>
                   </td>
                   <td class="text-primary">
-                    {{ user['name'] }}
+                    {{ user.name }}
                   </td>
                 </tr>
                 <tr>
@@ -77,40 +77,18 @@
                     </strong>
                   </td>
                   <td class="text-primary">
-                    Admin
+                    {{ tmp['roles'] }}
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <strong>
                       <span class="glyphicon glyphicon-envelope text-primary" />
-                      {{ user['email'] }} Email
+                      Email
                     </strong>
                   </td>
                   <td class="text-primary">
-                    noreply@email.com
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>
-                      <span class="glyphicon glyphicon-calendar text-primary" />
-                      created
-                    </strong>
-                  </td>
-                  <td class="text-primary">
-                    20 jul 20014
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>
-                      <span class="glyphicon glyphicon-calendar text-primary" />
-                      Modified
-                    </strong>
-                  </td>
-                  <td class="text-primary">
-                    20 jul 20014 20:00:00
+                    {{ tmp['email'] }}
                   </td>
                 </tr>
                 <tr>
@@ -155,10 +133,14 @@
 <script>
 export default {
   layout: 'default',
-  asyncData ({ $auth }) {
-    console.log($auth.user, $auth.hasScope('ROLE_USER'), $auth.hasScope('ROLE_ADMIN'))
+  async asyncData ({ $auth, $axios }) {
+    // return await $axios.$get('http://localhost:8000/api/users')
+    // .then(r => ({ users: r['hydra:member'] }))
+    const tmp = await $axios.$get(`http://localhost:8000/api/users/${$auth.user.id}`)
+    console.log(tmp, $auth.user, $auth.hasScope('ROLE_USER'), $auth.hasScope('ROLE_ADMIN'))
     return {
-      user: $auth.user
+      user: $auth.user,
+      tmp
     }
   }
 }

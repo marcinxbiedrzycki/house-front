@@ -1,58 +1,100 @@
 <template>
   <div class="container">
+    <div>
+      <!--    <h1>Hello {{ id }}</h1>-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="project-info-box mt-0">
+              <h5>HOUSE DETAILS</h5>
+              <p class="mb-0">
+                Vivamus pellentesque, felis in aliquam ullamcorper, lorem tortor porttitor erat, hendrerit porta nunc tellus eu lectus. Ut vel imperdiet est. Pellentesque condimentum, dui et blandit laoreet, quam nisi tincidunt tortor.
+              </p>
+            </div><!-- / project-info-box -->
 
-  <div>
-    <h1>Hello {{ id }}</h1>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-    <div class="container">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="project-info-box mt-0">
-            <h5>HOUSE DETAILS</h5>
-            <p class="mb-0">Vivamus pellentesque, felis in aliquam ullamcorper, lorem tortor porttitor erat, hendrerit porta nunc tellus eu lectus. Ut vel imperdiet est. Pellentesque condimentum, dui et blandit laoreet, quam nisi tincidunt tortor.</p>
-          </div><!-- / project-info-box -->
+            <div class="project-info-box">
+              <p><b>Client:</b> CUPCAKE CO</p>
+              <p><b>Date:</b> 14.02.2020</p>
+              <p><b>Designer:</b> James Doe</p>
+              <p><b>Tools:</b> Illustrator</p>
+              <p class="mb-0">
+                <b>Budget:</b> $500
+              </p>
+            </div><!-- / project-info-box -->
+          </div><!-- / column -->
 
-          <div class="project-info-box">
-            <p><b>Client:</b> CUPCAKE CO</p>
-            <p><b>Date:</b> 14.02.2020</p>
-            <p><b>Designer:</b> James Doe</p>
-            <p><b>Tools:</b> Illustrator</p>
-            <p class="mb-0"><b>Budget:</b> $500</p>
-          </div><!-- / project-info-box -->
-
-        </div><!-- / column -->
-
-        <div class="col-md-7">
-          <img src="https://via.placeholder.com/400x300/FFB6C1/000000" alt="project-image" class="rounded">
-          <div class="project-info-box">
-            <p><b>Categories:</b> Design, Illustration</p>
-            <p><b>Skills:</b> Illustrator</p>
-          </div><!-- / project-info-box -->
-        </div><!-- / column -->
+          <div class="col-md-7">
+            <img src="https://via.placeholder.com/400x300/FFB6C1/000000" alt="project-image" class="rounded">
+            <div class="project-info-box">
+              <p><b>Categories:</b> Design, Illustration</p>
+              <p><b>Skills:</b> Illustrator</p>
+            </div><!-- / project-info-box -->
+          </div><!-- / column -->
+        </div>
       </div>
     </div>
-  </div>
     <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
-      <h4 class="font-cond-l fg-accent lts-md mgb-10" contenteditable="false">Zobacz co inni sądzą o tym domku!</h4>
-      <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Read Customer Reviews</h1>
+      <h4 class="font-cond-l fg-accent lts-md mgb-10" contenteditable="false">
+        Zobacz co inni sądzą o tym domku!
+      </h4>
+      <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">
+        Read Customer Reviews
+      </h1>
     </div>
     <ul class="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">
       <li>
-        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-        <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
-        <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Martha Stewart</h5>
+        <img
+          src="https://bootdey.com/img/Content/avatar/avatar1.png"
+          class="wpx-100 img-round mgb-20"
+          title=""
+          alt=""
+          data-edit="false"
+          data-editor="field"
+          data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]"
+        >
+        <p class="fs-110 font-cond-l" contenteditable="false">
+          " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "
+        </p>
+        <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">
+          Martha Stewart
+        </h5>
         <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Business Woman - New York</small>
       </li>
       <li>
-        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-        <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
-        <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Ariana Menage</h5>
+        <img
+          src="https://bootdey.com/img/Content/avatar/avatar4.png"
+          class="wpx-100 img-round mgb-20"
+          title=""
+          alt=""
+          data-edit="false"
+          data-editor="field"
+          data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]"
+        >
+        <p class="fs-110 font-cond-l" contenteditable="false">
+          " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "
+        </p>
+        <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">
+          Ariana Menage
+        </h5>
         <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Recording Artist - Los Angeles</small>
       </li>
       <li>
-        <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-        <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
-        <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Sean Carter</h5>
+        <img
+          src="https://bootdey.com/img/Content/avatar/avatar5.png"
+          class="wpx-100 img-round mgb-20"
+          title=""
+          alt=""
+          data-edit="false"
+          data-editor="field"
+          data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]"
+        >
+        <p class="fs-110 font-cond-l" contenteditable="false">
+          " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "
+        </p>
+        <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">
+          Sean Carter
+        </h5>
         <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Fund Manager - Chicago</small>
       </li>
     </ul>
@@ -62,11 +104,10 @@
 <script>
 export default {
   layout: 'default',
-  // middleware: 'authenticated',
   async asyncData ({ $axios, params }) {
     const id = params.id
     return await $axios.$get(`http://localhost:8000/api/houses/${params.id}`)
-      .then(r => ({ id, houses: console.log(r[id]) }))
+      .then(r => ({ id, houses: r[id] }))
   }
 }
 </script>

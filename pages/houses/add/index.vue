@@ -14,22 +14,28 @@
           <v-text-field v-model="description" label="opis" />
           <v-text-field v-model="visible" label="aktywne" />
 
-          <v-file-input label="File input" :value="current" />
-
-          <!--          <v-file-input-->
-          <!--            :label="image"-->
-          <!--            accept="image/*"-->
-          <!--            prepend-icon="mdi-camera"-->
-          <!--            @change="updateAvatar"-->
-          <!--            hide-details-->
-          <!--            outlined-->
-          <!--            truncate-length="15"-->
-          <!--          ></v-file-input>-->
-
-          <!--          <input type="file" name="image" accept="image/*" @change="getImage($event)">-->
-          <!--          <button @click="updateAvatar">-->
-          <!--            Dodaj zdjęcie-->
-          <!--          </button>-->
+          <div class="large-12 medium-12 small-12 cell">
+            <label>Files
+              <input id="files" ref="files" type="file" multiple @change="handleFilesUpload()">
+            </label>
+          </div>
+          <div class="large-12 medium-12 small-12 cell">
+            <div v-for="(file, key) in files" class="file-listing">
+              {{ file.name }} <span class="remove-file" @click="removeFile( key )">Remove</span>
+            </div>
+          </div>
+          <br>
+          <div class="large-12 medium-12 small-12 cell">
+            <button @click="addFiles()">
+              Add Files
+            </button>
+          </div>
+          <br>
+          <div class="large-12 medium-12 small-12 cell">
+            <button @click="submitFiles()">
+              Submit
+            </button>
+          </div>
 
           <v-btn type="submit" @click="postAdd">
             Dodaj ogłoszenie
@@ -37,10 +43,6 @@
           <NuxtLink to="/">
             Wróć do strony głównej
           </NuxtLink>
-
-          <!--                    <v-btn type="submit" @click="back">-->
-          <!--            Powrót do menu-->
-          <!--          </v-btn>-->
         </v-form>
       </v-col>
     </v-row>
@@ -48,66 +50,66 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
-  // import UploadImage from 'vue-upload-image';
-  components: {
-    // UploadImage,
-  },
-  // middleware: 'authenticated',
   data () {
     return {
       username: '',
       password: '',
       msg: 'Cargar Imagen de Perfil',
       image: null,
-      errors: []
+      errors: [],
+      files: []
     }
   },
   methods: {
-    data () {
-      console.log(123123)
-      return {
-        current: new File(['foo'], 'foo.txt', {
-          type: 'text/plain'
-        })
+    addFiles () {
+      this.$refs.files.click()
+    },
+    submitFiles () {
+      const formData = new FormData()
+      for (let i = 0; i < this.files.length; i++) {
+        const file = this.files[i]
+        formData.append('files[' + i + ']', file)
+      }
+      console.info(formData)
+      console.log(formData)
+      // this.$axios.post('http://localhost:8000/upload',
+      //   formData,
+      //   {
+      //     headers: {
+      //       'Content-Type': 'multipart/form-data'
+      //     }
+      //   }
+      // ).then(function () {
+      //   console.log('SUCCESS!!')
+      // })
+      //   .catch(function () {
+      //     console.log('FAILURE!!')
+      //   })
+    },
+    handleFilesUpload () {
+      const uploadedFiles = this.$refs.files.files
+      for (let i = 0; i < uploadedFiles.length; i++) {
+        this.files.push(uploadedFiles[i])
       }
     },
-    async postAdd () {
-      // eslint-disable-next-line no-undef
-      await this.$axios.$post('http://localhost:8000/api/houses', {
-        name: this.name,
-        price: Number(this.price),
-        description: this.description,
-        visible: Boolean(this.visible)
-      })
-        .then(this.$router.push('/houses/add/success'))
-        .catch(error => this.errors.push(error.response.data.message))
-    },
-    async back ({ $router }) {
-      // eslint-disable-next-line no-undef
-      return await $router.push('/')
-    },
-    getImage (event) {
-      // Asignamos la imagen a  nuestra data
-      this.image = event.target.files[0]
-    },
-    updateAvatar () {
-      // Creamos el formData
-      // const data = new FormData()
-      // data.append('avatar', this.image)
-      // data.append('_method', 'POST')
-      // Enviamos la petición
-      axios.post('http://localhost:8000/upload', {
-        image: event.target.files[0]
-      })
-        .then((response) => {
-          console.log(response)
-        })
+    removeFile (key) {
+      this.files.splice(key, 1)
     }
+  },
+  async postAdd ({ $auth }) {
+    // eslint-disable-next-line no-undef
+    await this.$axios.$post('http://localhost:8000/api/houses', {
+      name: this.name,
+      price: Number(this.price),
+      description: this.description,
+      visible: Boolean(this.visible),
+      ownerId: Number($auth.user.id)
+    })
+      .then(this.$router.push('/houses/add/success'))
+      .catch(error => this.errors.push(error.response.data.message))
   }
 }
 </script>
