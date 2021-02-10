@@ -25,7 +25,7 @@ export default {
   components: {
     // UploadImage,
   },
-  middleware: 'authenticated',
+  middleware: 'isAdmin',
   data () {
     return {
       files: [],

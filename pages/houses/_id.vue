@@ -1,4 +1,6 @@
 <template>
+  <div class="container">
+
   <div>
     <h1>Hello {{ id }}</h1>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
@@ -29,6 +31,31 @@
         </div><!-- / column -->
       </div>
     </div>
+  </div>
+    <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
+      <h4 class="font-cond-l fg-accent lts-md mgb-10" contenteditable="false">Zobacz co inni sądzą o tym domku!</h4>
+      <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Read Customer Reviews</h1>
+    </div>
+    <ul class="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">
+      <li>
+        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+        <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
+        <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Martha Stewart</h5>
+        <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Business Woman - New York</small>
+      </li>
+      <li>
+        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+        <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
+        <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Ariana Menage</h5>
+        <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Recording Artist - Los Angeles</small>
+      </li>
+      <li>
+        <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+        <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
+        <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Sean Carter</h5>
+        <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Fund Manager - Chicago</small>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -439,4 +466,60 @@ a.btn, a.btn-social {
 b, strong {
   font-weight: 700 !important;
 }
+
+.align-center {
+  text-align: center;
+}
+.hash-list {
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px){
+  .hash-list.cols-3 > li:nth-last-child(-n+3) {
+    border-bottom: none;
+  }
+}
+@media (min-width: 768px){
+  .hash-list.cols-3 > li {
+    width: 33.3333%;
+  }
+}
+.hash-list > li {
+  display: block;
+  float: left;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.pad-30, .pad-30-all > * {
+  padding: 30px;
+}
+.mgb-20, .mgb-20-all > * {
+  margin-bottom: 20px;
+}
+
+.img-round, .img-rel-round {
+  border-radius: 50%;
+}
+.padb-30, .padb-30-all > * {
+  padding-bottom: 30px;
+}
+
+.mgb-40, .mgb-40-all > * {
+  margin-bottom: 40px;
+}
+
+[class*="line-b"] {
+  position: relative;
+  padding-bottom: 20px;
+  border-color: #E6AF2A;
+}
+.fg-text-d, .fg-hov-text-d:hover, .fg-active-text-d.active {
+  color: #222;
+}
+.font-cond-b {
+  font-weight: 700 !important;
+}
+
 </style>

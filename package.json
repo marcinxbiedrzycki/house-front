@@ -12,16 +12,19 @@
     "lint": "yarn lint:js && yarn lint:style"
   },
   "dependencies": {
+    "@nuxtjs/auth-next": "^5.0.0-1612791489.a5d8c28",
     "@nuxtjs/axios": "^5.12.5",
     "ansi-regex": "^5.0.0",
     "bootstrap-vue": "^2.21.2",
     "cookieparser": "^0.1.0",
     "core-js": "^3.8.2",
+    "filepond": "^4.25.1",
     "js-cookie": "^2.2.1",
     "jwt-decode": "^3.1.2",
     "mdbvue": "^6.7.2",
     "nuxt": "^2.14.12",
     "nuxt-material-design-icons": "^1.0.4",
+    "vue-filepond": "^6.0.3",
     "vue-material": "^1.0.0-beta-15",
     "vue-table-dynamic": "^0.4.4",
     "vue-upload-image": "^1.1.5"

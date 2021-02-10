@@ -13,7 +13,7 @@
           :key="i"
           :to="item.to"
           router
-          exactW
+          exact-w
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -80,7 +80,7 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'Profil',
-          to: '/profil'
+          to: '/profile'
         },
         {
           icon: 'mdi-chart-bubble',

@@ -1,11 +1,14 @@
 <template>
-
   <div class="container">
     <div class="row">
       <div class="col-md-6 text-center full-content">
-        <h2 class="section-title no-border v-3"><span>Witaj</span> w house share</h2>
-        <p class="sub-section-title v-2">Przeglądaj liste domków do wynajęcia lub dodaj swoją ofertę</p>
-        <div class="mrb-45"></div>
+        <h2 class="section-title no-border v-3">
+          <span>Witaj</span> w house share
+        </h2>
+        <p class="sub-section-title v-2">
+          Przeglądaj liste domków do wynajęcia lub dodaj swoją ofertę
+        </p>
+        <div class="mrb-45" />
         <!--  /.mrb -->
       </div>
       <!--  /.col-md-12 -->
@@ -20,22 +23,22 @@
               <div class="article-v2">
                 <figure class="article-thumb">
                   <a href="#">
-<!--                    <img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt="blog image"/>-->
-                    <img src="../static/housik.jpg" width="350" height="280" alt="blog image"/>
+                    <!--                    <img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt="blog image"/>-->
+                    <img src="../static/housik.jpg" width="350" height="280" alt="blog image">
                   </a>
                 </figure>
                 <br>
                 <br>
                 <div class="article-content-main">
                   <div class="article-header">
-                    <h2 class="entry-title"><a href="houses/add">Dodaj nowe ogłoszenie.</a></h2>
-                    <div class="entry-meta">
-                    </div>
+                    <h2 class="entry-title">
+                      <a href="houses/add">Dodaj nowe ogłoszenie.</a>
+                    </h2>
+                    <div class="entry-meta" />
                     <!-- /.entry-meta -->
                   </div>
                   <div class="article-footer">
-                    <div class="row">
-                    </div>
+                    <div class="row" />
                   </div>
                 </div>
               </div>
@@ -47,22 +50,21 @@
               <div class="article-v2">
                 <figure class="article-thumb">
                   <a href="#">
-<!--                    <img src="https://via.placeholder.com/350x280/87CEFA/000000" alt="blog image"/>-->
-                    <img src="../static/houz.png" width="350" height="280" alt="blog image"/>
+                    <!--                    <img src="https://via.placeholder.com/350x280/87CEFA/000000" alt="blog image"/>-->
+                    <img src="../static/houz.png" width="350" height="280" alt="blog image">
                   </a>
                 </figure>
                 <!-- /.article-thumb -->
                 <div class="article-content-main">
                   <div class="article-header">
-                    <h2 class="entry-title"><a href="/houses">Zobacz liste domków.</a></h2>
-                    <div class="entry-meta">
-                    </div>
+                    <h2 class="entry-title">
+                      <a href="/houses">Zobacz liste domków.</a>
+                    </h2>
+                    <div class="entry-meta" />
                   </div>
                   <div class="article-footer">
                     <div class="row">
-                      <div class="col-6 text-left footer-link">
-
-                      </div>
+                      <div class="col-6 text-left footer-link" />
                     </div>
                   </div>
                 </div>
@@ -75,16 +77,19 @@
               <div class="article-v2">
                 <figure class="article-thumb">
                   <a href="#">
-                    <img src="../static/profile-1506810-1278719.png" width="350" height="280" alt="blog image"/>
+                    <img src="../static/profile-1506810-1278719.png" width="350" height="280" alt="blog image">
                   </a>
                 </figure>
                 <br>
                 <br>
                 <div class="article-content-main">
                   <div class="article-header">
-                    <h2 class="entry-title"><a href="#">Zobacz swój profil</a></h2>
-                    <div class="entry-meta">
-                    </div>
+                    <h2 class="entry-title">
+                      <router-link :to="{ name: 'profile' }">
+                        Zobacz swój profil
+                      </router-link>
+                    </h2>
+                    <div class="entry-meta" />
                   </div>
                   <div class="article-footer">
                     <div class="row">
@@ -107,7 +112,7 @@
       </div>
       <!--  /.col-12 -->
     </div>
-<!--    &lt;!&ndash;  /.row &ndash;&gt;authenticated-->
+    <!--    &lt;!&ndash;  /.row &ndash;&gt;authenticated-->
   </div>
 </template>
 
@@ -115,7 +120,11 @@
 
 export default {
   layout: 'default',
-  middleware: 'notAuthenticated'
+  // middleware: 'auth'
+  // eslint-disable-next-line require-await
+  async asyncData () {
+    console.info(123123123)
+  }
 }
 </script>
 

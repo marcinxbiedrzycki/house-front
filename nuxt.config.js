@@ -39,14 +39,38 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     'bootstrap-vue/nuxt'
   ],
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'token'
+        },
+        user: {
+          property: 'user'
+        },
+        endpoints: {
+          login: { url: '/authentication_token', method: 'post', baseURL: 'http://localhost:8000' },
+          logout: false,
+          user: { url: '/api/users/me', method: 'get', baseURL: 'http://localhost:8000' }
+        }
+      }
+    },
+    scopeKey: 'roles'
+  },
+
   bootstrapVue: {
     icons: true
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
+
+  router: {
+    middleware: ['auth']
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

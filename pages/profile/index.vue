@@ -132,21 +132,33 @@
   </div>
 </template>
 
+<!--<script>-->
+<!--export default {-->
+<!--  layout: 'admin',-->
+<!--  middleware: 'isAdmin',-->
+<!--  async asyncData ({ $axios, params }) {-->
+<!--    return await $axios.$get(`http://localhost:8000/api/users/${params.id}`)-->
+<!--      .then(r => ({ user: r }))-->
+<!--  },-->
+<!--  methods: {-->
+<!--    async editUser ({ $axios, params }) {-->
+<!--      return await $axios.$post(`http://localhost:8000/api/users/${params.id}`,-->
+<!--        {-->
+<!--          name: this.name,-->
+<!--          password: this.password-->
+<!--        }).then(this.$router.push('/admin/users/'))-->
+<!--    }-->
+<!--  }-->
+<!--}-->
+<!--</script>-->
+
 <script>
 export default {
-  layout: 'admin',
-  middleware: 'isAdmin',
-  async asyncData ({ $axios, params }) {
-    return await $axios.$get(`http://localhost:8000/api/users/${params.id}`)
-      .then(r => ({ user: r }))
-  },
-  methods: {
-    async editUser ({ $axios, params }) {
-      return await $axios.$post(`http://localhost:8000/api/users/${params.id}`,
-        {
-          name: this.name,
-          password: this.password
-        }).then(this.$router.push('/admin/users/'))
+  layout: 'default',
+  asyncData ({ $auth }) {
+    console.log($auth.user, $auth.hasScope('ROLE_USER'), $auth.hasScope('ROLE_ADMIN'))
+    return {
+      user: $auth.user
     }
   }
 }

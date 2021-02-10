@@ -1,53 +1,61 @@
 <template>
-    <div class="container">
-      <div v-for="users in users" :key="users['id']" class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-        <v-card>
-          <div class="product-content product-wrap clearfix">
-            <div class="row">
-              <div class="col-md-5 col-sm-12 col-xs-12">
-                <div class="product-image">
-                  <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
-                  <span class="tag2 hot">
-						</span>
-                </div>
+  <div class="container">
+    <div v-for="users in users" :key="users['id']" class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+      <v-card>
+        <div class="product-content product-wrap clearfix">
+          <div class="row">
+            <div class="col-md-5 col-sm-12 col-xs-12">
+              <div class="product-image">
+                <img
+                  alt=""
+                  style="width:600px;"
+                  title=""
+                  class="img-circle img-thumbnail isTooltip"
+                  src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                  data-original-title="Usuario"
+                >
+                <span class="tag2 hot" />
               </div>
-              <div class="col-md-7 col-sm-12 col-xs-12">
-                <div class="product-deatil">
-                  <h5 class="name">
-                    <router-link :to="'/admin/users/' + users['id']">
-                      {{ users['name']}}
-                    </router-link>
-                  </h5>
-                  <p class="price-container">
-                    <span>$99</span>
-                  </p>
-                  <span class="tag1"></span>
-                </div>
-                <div class="description">
-                  <p> </p>
-                </div>
-                <div class="product-info smart-form">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <nuxt-link to="/houses['id']" prefetch>About page prefetched</nuxt-link>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <div class="rating">
-                        <label for="stars-rating-5"><i class="fa fa-star"></i></label>
-                        <label for="stars-rating-4"><i class="fa fa-star"></i></label>
-                        <label for="stars-rating-3"><i class="fa fa-star text-primary"></i></label>
-                        <label for="stars-rating-2"><i class="fa fa-star text-primary"></i></label>
-                        <label for="stars-rating-1"><i class="fa fa-star text-primary"></i></label>
-                      </div>
+            </div>
+            <div class="col-md-7 col-sm-12 col-xs-12">
+              <div class="product-deatil">
+                <h5 class="name">
+                  <router-link :to="'/admin/users/' + users['id']">
+                    {{ users['name'] }}
+                  </router-link>
+                </h5>
+                <p class="price-container">
+                  <span>$99</span>
+                </p>
+                <span class="tag1" />
+              </div>
+              <div class="description">
+                <p />
+              </div>
+              <div class="product-info smart-form">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <nuxt-link to="/houses['id']" prefetch>
+                      About page prefetched
+                    </nuxt-link>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="rating">
+                      <label for="stars-rating-5"><i class="fa fa-star" /></label>
+                      <label for="stars-rating-4"><i class="fa fa-star" /></label>
+                      <label for="stars-rating-3"><i class="fa fa-star text-primary" /></label>
+                      <label for="stars-rating-2"><i class="fa fa-star text-primary" /></label>
+                      <label for="stars-rating-1"><i class="fa fa-star text-primary" /></label>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </v-card>
-      </div>
+        </div>
+      </v-card>
     </div>
+  </div>
 </template>
 
 <script>
@@ -56,12 +64,12 @@ export default {
   // eslint-disable-next-line no-undef,vue/no-unused-components
   // components: { VueTableDynamic },
   layout: 'admin',
-  // middleware: 'authenticated',
+  middleware: 'isAdmin',
   // methods: {
-    // clicked (user) {
-    //   this.$router.push('/admin/users/edit/' + user.id)
-    //   // console.log('clickList fired with ' + users.id)
-    // }
+  // clicked (user) {
+  //   this.$router.push('/admin/users/edit/' + user.id)
+  //   // console.log('clickList fired with ' + users.id)
+  // }
   // },
   async asyncData ({ $axios, params }) {
     const id = params.id
